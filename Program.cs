@@ -17,9 +17,8 @@ namespace OptionGreeksCalculator
 				volatility: 0.2
 				);
 
-			GreeksService service = new GreeksService();
-			GreeksType greeks = service.CalculateOptionGreeks(option);
-			service.PrintOptionGreeks(greeks);
+			OptionGreeks greeks = OptionGreeksService.CalculateOptionGreeks(option);
+			OptionGreeksService.PrintOptionGreeks(greeks);
 
 			Console.ReadLine();
 		}

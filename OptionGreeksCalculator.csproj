@@ -47,13 +47,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Greeks.cs" />
-    <Compile Include="Models\GreeksType.cs" />
+    <Compile Include="Models\OptionGreeks.cs" />
     <Compile Include="Models\Option.cs" />
+    <Compile Include="Models\OptionType.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\GreeksCalculatorService.cs" />
     <Compile Include="Services\GreeksConsolePrinterService.cs" />
-    <Compile Include="Services\GreeksService.cs" />
+    <Compile Include="Services\OptionGreeksService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

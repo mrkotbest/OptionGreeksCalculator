@@ -4,16 +4,16 @@ using static System.Console;
 
 namespace OptionGreeksCalculator.Services
 {
-	public class GreeksConsolePrinterService
+	public static class GreeksConsolePrinterService
 	{
-		public void PrintGreeks(GreeksType greeksType)
+		public static void PrintGreeks(OptionGreeks greeksType)
 		{
-			Write(CreateGreeksTableByType(greeksType.CallGreeks, "call"));
+			Write(CreateGreeksTableByType(greeksType.CallGreeks, OptionType.Call));
 			WriteLine("\n" + new string('*', 23) + "\n");
-			Write(CreateGreeksTableByType(greeksType.PutGreeks, "put"));
+			Write(CreateGreeksTableByType(greeksType.PutGreeks, OptionType.Put));
 		}
 
-		private string CreateGreeksTableByType(Greeks greeks, string type)
+		private static string CreateGreeksTableByType(Greeks greeks, OptionType type)
 		{
 			StringBuilder sb = new StringBuilder();
 			sb.AppendLine($"{"Parameter",-10} | {"Value",10}");
