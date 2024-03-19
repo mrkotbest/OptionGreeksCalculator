@@ -5,7 +5,7 @@ Option Greeks Calculator - это консольное приложение на
 ## Использование
 Создайте экземпляр объекта Option с необходимыми данными опциона в качестве параметров, например:
 ```csharp
-Option option = new Option(
+IOption option = new Option(
 	underlyingPrice: 100,       // цена базового актива
 	strikePrice: 110,           // цена страйка
 	timeToExpiration: 0.5,      // время до истечения (в годах)
@@ -16,7 +16,7 @@ Option option = new Option(
 ```
 Далее вызовите статистический метод CalculateOptionGreeks класса OptionGreeksService, который возвращает рассчитанные греки.
 ```csharp
-OptionGreeks greeks = OptionGreeksService.CalculateOptionGreeks(option);
+IOptionGreeks greeks = OptionGreeksService.CalculateOptionGreeks(option);
 ```
 Затем вызовите статистический метод PrintOptionGreeks класса OptionGreeksService для вывода значений грек на консоль:
 ```csharp
