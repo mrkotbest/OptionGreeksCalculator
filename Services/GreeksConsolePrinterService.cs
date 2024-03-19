@@ -1,4 +1,5 @@
 ﻿using OptionGreeksCalculator.Models;
+using OptionGreeksCalculator.Models.Interfaces;
 using System.Text;
 using static System.Console;
 
@@ -6,14 +7,14 @@ namespace OptionGreeksCalculator.Services
 {
 	public static class GreeksConsolePrinterService
 	{
-		public static void PrintGreeks(OptionGreeks greeksType)
+		public static void PrintGreeks(IOptionGreeks greeksType)
 		{
 			Write(CreateGreeksTableByType(greeksType.CallGreeks, OptionType.Call));
 			WriteLine("\n" + new string('*', 23) + "\n");
 			Write(CreateGreeksTableByType(greeksType.PutGreeks, OptionType.Put));
 		}
 
-		private static string CreateGreeksTableByType(Greeks greeks, OptionType type)
+		private static string CreateGreeksTableByType(IGreeks greeks, OptionType type)
 		{
 			StringBuilder sb = new StringBuilder();
 			sb.AppendLine($"{"Parameter",-10} | {"Value",10}");

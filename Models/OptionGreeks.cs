@@ -1,11 +1,13 @@
-﻿namespace OptionGreeksCalculator.Models
-{
-	public class OptionGreeks
-	{
-		public Greeks CallGreeks { get; private set; }
-		public Greeks PutGreeks { get; private set; }
+﻿using OptionGreeksCalculator.Models.Interfaces;
 
-		public OptionGreeks(Greeks call, Greeks put)
+namespace OptionGreeksCalculator.Models
+{
+	public class OptionGreeks : IOptionGreeks
+	{
+		public IGreeks CallGreeks { get; }
+		public IGreeks PutGreeks { get; }
+
+		public OptionGreeks(IGreeks call, IGreeks put)
 		{
 			CallGreeks = call;
 			PutGreeks = put;

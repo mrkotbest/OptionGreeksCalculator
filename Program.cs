@@ -1,4 +1,5 @@
 ﻿using OptionGreeksCalculator.Models;
+using OptionGreeksCalculator.Models.Interfaces;
 using OptionGreeksCalculator.Services;
 using System;
 
@@ -8,7 +9,7 @@ namespace OptionGreeksCalculator
 	{
 		static void Main(string[] args)
 		{
-			Option option = new Option(
+			IOption option = new Option(
 				underlyingPrice: 100,
 				strikePrice: 110,
 				timeToExpiration: 0.5,
@@ -17,7 +18,7 @@ namespace OptionGreeksCalculator
 				volatility: 0.2
 				);
 
-			OptionGreeks greeks = OptionGreeksService.CalculateOptionGreeks(option);
+			IOptionGreeks greeks = OptionGreeksService.CalculateOptionGreeks(option);
 			OptionGreeksService.PrintOptionGreeks(greeks);
 
 			Console.ReadLine();

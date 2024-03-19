@@ -47,6 +47,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Greeks.cs" />
+    <Compile Include="Models\Interfaces\IGreeks.cs" />
+    <Compile Include="Models\Interfaces\IOption.cs" />
+    <Compile Include="Models\Interfaces\IOptionGreeks.cs" />
     <Compile Include="Models\OptionGreeks.cs" />
     <Compile Include="Models\Option.cs" />
     <Compile Include="Models\OptionType.cs" />
